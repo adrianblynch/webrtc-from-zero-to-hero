@@ -4,6 +4,8 @@ Here I will chart my knowledge of WebRTC, from zero when I first heard about it,
 
 It will act as a bit of a brain dump for a while until I get around to composing it better. It was also have my initial understandings which will be fleshed out as my knowledge increases.
 
+There will be a few divergences with related topics. The video element, websockets, general web development etc.
+
 ## Glossary
 
 - STUN - [Session Traversal Utilities for NAT](http://tools.ietf.org/html/rfc5389) - Formerly [Simple Traversal of User Datagram Protocol Through NAT](http://tools.ietf.org/html/rfc3489) - Used to allow traffic between peers behind firewalls.
