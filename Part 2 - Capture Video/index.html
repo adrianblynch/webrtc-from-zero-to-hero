@@ -1,0 +1,26 @@
+<!doctype>
+
+<video></video>
+<button>Snap</button>
+<canvas></canvas>
+
+<script>
+
+var video = document.querySelector("video");
+var button = document.querySelector("button");
+var canvas = document.querySelector("canvas");
+
+navigator.webkitGetUserMedia(
+	{video: true, audio: false},
+	function(stream) {
+		video.src = window.URL.createObjectURL(stream);
+		video.play();
+	},
+	function(err) {
+		console.log(err);
+	}
+);
+
+console.log(video);
+
+</script>
