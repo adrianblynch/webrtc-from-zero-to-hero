@@ -37,6 +37,27 @@ This should result in the browser asking you for permission to access your webca
 
 Note that Chrome will continue to ask you for permission to access your camera if you're browsing over HTTP. If you change that to HTTPS, your choice is remembered.
 
+The second and third arguments to GUM (getUserMedia) are a success callback and an error callback:
+
+```
+navigator.webkitGetUserMedia(
+	...
+	function(stream) {
+		video.src = window.URL.createObjectURL(stream);
+		video.play();
+	},
+	function(err) {
+		console.log(err);
+	}
+);
+```
+
+If there is an error firing up the webcam, you click Deny, the error callback will give details about what has happened. For now I'm going to simply log the error and do no more.
+
+If the success callback is fired, we then create an object URL with the passed in stream and play the video.
+
+If everything has gone to plan, you should now be seeing your lovely self in the browser!
+
 ## Glossary
 
 - STUN - [Session Traversal Utilities for NAT](http://tools.ietf.org/html/rfc5389) - Formerly [Simple Traversal of User Datagram Protocol Through NAT](http://tools.ietf.org/html/rfc3489) - Used to allow traffic between peers behind firewalls.
