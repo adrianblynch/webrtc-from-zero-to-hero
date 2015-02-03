@@ -8,7 +8,7 @@ There will be a few divergences with related topics. The video element, websocke
 
 At the time of starting this quest, I'm running the following:
 
-- Mac OSX 10.9
+- Mac OSX 10.9 on a MacBook Pro
 - Chrome 40.0.2214.94 (64-bit)
 - Node 0.10.36
 
@@ -18,7 +18,22 @@ Before I start using Node in the later parts, I fire up a webserver with the fol
 
 ## Part 1 - The Video Element
 
-To start with, we place a video element on the page. Using JavaScript to request access to our webcam we display it via the video element.
+To start with, we place a video element on the page:
+
+```
+<video></video>
+```
+
+Next we call our prefixed getUserMedia(), passing options to turn off audio and turn on video:
+
+```
+navigator.webkitGetUserMedia(
+	{video: true, audio: false},
+	...
+);
+```
+
+This should result in the browser asking you for permission to access your webcam.
 
 Note that Chrome will continue to ask you for permission to access your camera if you're browsing over HTTP. If you change that to HTTPS, your choice is remembered.
 
