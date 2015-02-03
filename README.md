@@ -8,6 +8,7 @@ There will be a few divergences with related topics. The video element, websocke
 
 At the time of starting this quest, I'm running the following:
 
+- Mac OSX 10.9
 - Chrome 40.0.2214.94 (64-bit)
 - Node 0.10.36
 
