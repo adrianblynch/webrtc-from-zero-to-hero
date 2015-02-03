@@ -20,6 +20,8 @@ Before I start using Node in the later parts, I fire up a webserver with the fol
 
 To start with, we place a video element on the page. Using JavaScript to request access to our webcam we display it via the video element.
 
+Note that Chrome will continue to ask you for permission to access your camera if you're browsing over HTTP. If you change that to HTTPS, your choice is remembered.
+
 ## Glossary
 
 - STUN - [Session Traversal Utilities for NAT](http://tools.ietf.org/html/rfc5389) - Formerly [Simple Traversal of User Datagram Protocol Through NAT](http://tools.ietf.org/html/rfc3489) - Used to allow traffic between peers behind firewalls.
