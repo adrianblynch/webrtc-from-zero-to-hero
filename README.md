@@ -52,7 +52,7 @@ navigator.webkitGetUserMedia(
 );
 ```
 
-If there is an error firing up the webcam, you click Deny, the error callback will give details about what has happened. For now I'm going to simply log the error and do no more.
+If there is an error firing up the webcam, you click Deny for example, the error callback will give details about what has happened. For now I'm going to simply log the error and do no more.
 
 If the success callback is fired, we then create an object URL with the passed in stream and play the video.
 
