@@ -95,6 +95,16 @@ video.addEventListener("canplay", function() {
 
 The _canplay_ event, not the _play_ event, is the one we need to look out for and after which the video's width and height become available.
 
+You should now be able to capture video and display it in a canvas element. The question you should now be asking is _What now?_
+
+Part 3 - Save Captured Image
+
+At this point you should have a video element showing your face from your webcam. When you click Snap an image should be appearing on the cavas underneath.
+
+```
+canvas.toDataURL('image/png')
+```
+
 ## Glossary
 
 - STUN - [Session Traversal Utilities for NAT](http://tools.ietf.org/html/rfc5389) - Formerly [Simple Traversal of User Datagram Protocol Through NAT](http://tools.ietf.org/html/rfc3489) - Used to allow traffic between peers behind firewalls.
