@@ -2,7 +2,7 @@
 
 Here I will chart my knowledge of WebRTC, from zero when I first heard about it, to where I am now which isn't that far, to hopefully a fully paid-up member of the WebRTC Expert Club!
 
-It will act as a bit of a brain dump for a while until I get around to composing it better. It was also have my initial understandings which will be fleshed out as my knowledge increases.
+It will act as a bit of a brain dump for a while until I get around to composing it better. I will document my initial understandings which will be fleshed out as my knowledge increases.
 
 There will be a few divergences with related topics. The video element, websockets, general web development etc.
 
