@@ -10,6 +10,18 @@ var video = document.querySelector("video");
 var button = document.querySelector("button");
 var canvas = document.querySelector("canvas");
 
+var ctx = canvas.getContext("2d");
+
+button.addEventListener("click", function(e) {
+	e.preventDefault();
+	ctx.drawImage(video, 0, 0, video.videoWidth, video.videoHeight);
+}, false);
+
+video.addEventListener("canplay", function(e) {
+	canvas.width = video.videoWidth;
+	canvas.height = video.videoHeight;
+}, false);
+
 navigator.webkitGetUserMedia(
 	{video: true, audio: false},
 	function(stream) {
@@ -20,7 +32,5 @@ navigator.webkitGetUserMedia(
 		console.log(err);
 	}
 );
-
-console.log(video);
 
 </script>
