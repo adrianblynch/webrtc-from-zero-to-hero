@@ -12,12 +12,11 @@ var canvas = document.querySelector("canvas");
 
 var ctx = canvas.getContext("2d");
 
-button.addEventListener("click", function(e) {
-	e.preventDefault();
+button.addEventListener("click", function() {
 	ctx.drawImage(video, 0, 0, video.videoWidth, video.videoHeight);
 }, false);
 
-video.addEventListener("canplay", function(e) {
+video.addEventListener("canplay", function() {
 	canvas.width = video.videoWidth;
 	canvas.height = video.videoHeight;
 }, false);
