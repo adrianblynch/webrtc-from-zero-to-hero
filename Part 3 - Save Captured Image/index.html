@@ -24,7 +24,15 @@ video.addEventListener("canplay", function() {
 }, false);
 
 navigator.webkitGetUserMedia(
-	{video: true, audio: false},
+	{
+		video: {
+			mandatory: {
+				maxWidth: 320,
+				maxHeight: 180
+			}
+		},
+		audio: false
+	},
 	function(stream) {
 		video.src = window.URL.createObjectURL(stream);
 		video.play();
