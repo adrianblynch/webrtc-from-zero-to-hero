@@ -12,7 +12,7 @@ At the time of starting this quest, I'm running the following:
 - Chrome 40.0.2214.94 (64-bit)
 - Node 0.10.36
 
-The first few parts will use prefixed JS methods, webkitGetUserMedia(), rather than using helper libs to normalise across browsers. This is to gain a feel for what's being done for me in untility libs like [adapter.js](https://github.com/GoogleChrome/webrtc/blob/master/samples/web/js/adapter.js). At some point in proceedings I will switch to using adapter.js knowing what it does for me.
+The first few parts will use prefixed JS methods, webkitGetUserMedia(), rather than using helper libs to normalise across browsers. This is to gain a feel for what's being done for me in utility libs like [adapter.js](https://github.com/GoogleChrome/webrtc/blob/master/samples/web/js/adapter.js) or [Modernizr](https://github.com/Modernizr/Modernizr). At some point in proceedings I will switch to using adapter.js knowing what it does for me.
 
 Before I start using Node in the later parts, I fire up a webserver with the following `python -m SimpleHTTPServer`. This eases development because you will get problems browsing a file directly from the file system and not over HTTP.
 
