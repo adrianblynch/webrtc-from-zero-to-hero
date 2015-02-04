@@ -70,6 +70,31 @@ A button, when clicked, will take a snapshot of the video, placing it on the new
 <canvas></canvas>
 ```
 
+Next we get a reference to the canvas's 2D context. This is used to write a captured image to:
+
+```
+var ctx = canvas.getContext("2d");
+```
+
+When the button is clicked, we draw to this context with the video as the source:
+
+```
+button.addEventListener("click", function(e) {
+	ctx.drawImage(video, 0, 0, video.videoWidth, video.videoHeight);
+}, false);
+```
+
+This next event listener is a little strange. We want the canvas to be the same size as the video. But we need the video to be playing before the width and height become available:
+
+```
+video.addEventListener("canplay", function() {
+	canvas.width = video.videoWidth;
+	canvas.height = video.videoHeight;
+}, false);
+```
+
+The canplay event, not the play event, is the one we need to look out for and after which the video's width and height become available.
+
 ## Glossary
 
 - STUN - [Session Traversal Utilities for NAT](http://tools.ietf.org/html/rfc5389) - Formerly [Simple Traversal of User Datagram Protocol Through NAT](http://tools.ietf.org/html/rfc3489) - Used to allow traffic between peers behind firewalls.
