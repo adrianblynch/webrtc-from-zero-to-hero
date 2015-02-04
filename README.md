@@ -101,8 +101,24 @@ You should now be able to capture video and display it in a canvas element. The 
 
 At this point you should have a video element showing your face from your webcam. When you click Snap an image should be appearing on the cavas underneath.
 
+To start with we change the way we select some elements on the page:
+
 ```
-canvas.toDataURL('image/png')
+...
+var snapButton = document.querySelector("button.snap");
+...
+var saveButton = document.querySelector("button.save");
+```
+
+We capture the Save button's click and fire off a number of calls. What you do with the data URL from here is up to you. I might revisit this at some point but this isn't getting us any closer to a video conference!
+
+```
+saveButton.addEventListener("click", function() {
+	var dataURL = canvas.toDataURL('image/png');
+	sendToServer(dataURL);
+	saveToLocalStorage(dataURL);
+	displayAsImage(dataURL);
+}, false);
 ```
 
 ## Glossary
