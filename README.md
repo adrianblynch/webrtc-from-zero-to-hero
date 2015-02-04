@@ -127,6 +127,29 @@ What you do with the data URL from here is up to you. I might revisit this at so
 
 Now we're divert our attention away from WebRTC for a bit and work out Socket.IO. The reason is, later on we'll be using Node and Socket.IO to implement signalling for our video conferencing.
 
+Here we will spin up a Node application using Express. We will mix in Socket.IO and start serving a web page (index.html) which will open up a websocket. Each instance of the web page will be able to read a stream of text in a "chat" window.
+
+Looking in package.json you'll see a couple of dependancies. Express and Socket.IO:
+
+```
+	...
+	"dependencies": {
+		"express": "^4.11.2",
+		"socket.io": "^1.3.3"
+	}
+	...
+```
+
+We define one route in Express which serves up our application's only page:
+
+```
+app.get('/', function(req, res) {
+	res.sendfile('index.html');
+});
+```
+
+So if we only have one route which delivers index.html, how does the script tag load /socket.io/socket.io.js? Using Socket.IO the way we do, the HTTP server (or is it Express itself?) intercepts the request to /socket.io/socket.io.js and responses with the client side JS file.
+
 ## Glossary
 
 Here's a great [WebRTC glossary](https://webrtcglossary.com/). The below is my own wording for terms as I encounter them and will include things outside of WebRTC.
