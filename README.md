@@ -125,6 +125,8 @@ What you do with the data URL from here is up to you. I might revisit this at so
 
 ## Glossary
 
+Here's a great [WebRTC glossary](https://webrtcglossary.com/). The below is my own wording for terms as I encounter them and will include things outside of WebRTC.
+
 - STUN - [Session Traversal Utilities for NAT](http://tools.ietf.org/html/rfc5389) - Formerly [Simple Traversal of User Datagram Protocol Through NAT](http://tools.ietf.org/html/rfc3489) - Used to allow traffic between peers behind firewalls.
 - TURN - [Traversal Using Relay NAT](http://tools.ietf.org/html/rfc5766)
 - SDP  - [Session Description Protocol](http://tools.ietf.org/html/rfc4566)
