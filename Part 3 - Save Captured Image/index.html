@@ -23,6 +23,25 @@ video.addEventListener("canplay", function() {
 	canvas.height = video.videoHeight;
 }, false);
 
+saveButton.addEventListener("click", function() {
+	var dataURL = canvas.toDataURL('image/png');
+	sendToServer(dataURL);
+	saveToLocalStorage(dataURL);
+	displayAsImage(dataURL);
+}, false);
+
+function sendToServer(dataURL) {
+	console.log("XHR request");
+}
+
+function saveToLocalStorage(dataURL) {
+	console.log("Save to Local Storage");
+}
+
+function displayAsImage(dataURL) {
+	console.log("Display as image");
+}
+
 navigator.webkitGetUserMedia(
 	{
 		video: {
