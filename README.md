@@ -70,7 +70,7 @@ A button, when clicked, will take a snapshot of the video, placing it on the new
 <canvas></canvas>
 ```
 
-Next we get a reference to the canvas's 2D context. This is used to write a captured image to:
+We get a reference to the canvas's 2D context. This is used to write a captured image to:
 
 ```
 var ctx = canvas.getContext("2d");
@@ -79,7 +79,7 @@ var ctx = canvas.getContext("2d");
 When the button is clicked, we draw to this context with the video as the source:
 
 ```
-button.addEventListener("click", function(e) {
+button.addEventListener("click", function() {
 	ctx.drawImage(video, 0, 0, video.videoWidth, video.videoHeight);
 }, false);
 ```
@@ -93,7 +93,7 @@ video.addEventListener("canplay", function() {
 }, false);
 ```
 
-The canplay event, not the play event, is the one we need to look out for and after which the video's width and height become available.
+The _canplay_ event, not the _play_ event, is the one we need to look out for and after which the video's width and height become available.
 
 ## Glossary
 
