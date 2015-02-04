@@ -110,7 +110,7 @@ var snapButton = document.querySelector("button.snap");
 var saveButton = document.querySelector("button.save");
 ```
 
-We capture the Save button's click and fire off a number of calls. What you do with the data URL from here is up to you. I might revisit this at some point but this isn't getting us any closer to a video conference!
+We capture the Save button's click and fire off a number of calls.:
 
 ```
 saveButton.addEventListener("click", function() {
@@ -120,6 +120,8 @@ saveButton.addEventListener("click", function() {
 	displayAsImage(dataURL);
 }, false);
 ```
+
+What you do with the data URL from here is up to you. I might revisit this at some point but this isn't getting us any closer to a video conference!
 
 ## Glossary
 
