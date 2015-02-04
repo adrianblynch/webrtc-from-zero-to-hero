@@ -58,6 +58,18 @@ If the success callback is fired, we then create an object URL with the passed i
 
 If everything has gone to plan, you should now be seeing your lovely self in the browser!
 
+## Part 2 - Capture Video
+
+This is a slight deviation from the goal of peer-to-peer video conferencing, but it's a nice quick look at doing something with the video you're now seeing.
+
+A button, when clicked, will take a snapshot of the video, placing it on the newly added canvas element:
+
+```
+...
+<button>Snap</button>
+<canvas></canvas>
+```
+
 ## Glossary
 
 - STUN - [Session Traversal Utilities for NAT](http://tools.ietf.org/html/rfc5389) - Formerly [Simple Traversal of User Datagram Protocol Through NAT](http://tools.ietf.org/html/rfc3489) - Used to allow traffic between peers behind firewalls.
