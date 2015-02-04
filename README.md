@@ -123,6 +123,10 @@ saveButton.addEventListener("click", function() {
 
 What you do with the data URL from here is up to you. I might revisit this at some point but this isn't getting us any closer to a video conference!
 
+## Part 4 - Socket.IO
+
+Now we're divert our attention away from WebRTC for a bit and work out Socket.IO. The reason is, later on we'll be using Node and Socket.IO to implement signalling for our video conferencing.
+
 ## Glossary
 
 Here's a great [WebRTC glossary](https://webrtcglossary.com/). The below is my own wording for terms as I encounter them and will include things outside of WebRTC.
