@@ -1,7 +1,8 @@
 <!doctype html>
 
 <p class="who">User ID: <span></span></p>
-<p class="status">Status: <span></span></p>
+<p class="status">Status: <span>Logged out</span></p>
+<p class="logins">Logins: <input /></p>
 
 <button class="login">Login</button>
 <button class="logout">Logout</button>
@@ -11,12 +12,14 @@
 
 	var userId = Math.floor(Math.random() * 99) + 1; // Not important
 	var socket = io();
+
+	var who = document.querySelector("p.who span");
+	var loginStatus = document.querySelector("p.status span");
+	var logins = document.querySelector("p input");
 	var loginButton = document.querySelector("button.login");
 	var logoutButton = document.querySelector("button.logout");
-	var loginStatus = document.querySelector("p.status span");
-	var who = document.querySelector("p.who span");
 
-	who.innerText = userId;
+	who.innerText = userId; // Show who we are
 
 	loginButton.addEventListener("click", function() {
 		loginStatus.innerText = "Logged in";
@@ -27,5 +30,13 @@
 		loginStatus.innerText = "Logged out";
 		socket.emit("Logout", userId);
 	}, false);
+
+	socket
+	.on("Login", function(msg) {
+		logins.value = msg + " just logged in";
+	})
+	.on("Logout", function(msg) {
+		logins.value = msg + " just logged out";
+	});
 
 </script>
