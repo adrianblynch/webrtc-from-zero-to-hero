@@ -131,7 +131,7 @@ What you do with the data URL from here is up to you. I might revisit this at so
 
 ## Part 4 - Socket.IO
 
-Now we're divert our attention away from WebRTC for a bit and work out Socket.IO. The reason is, later on we'll be using Node and Socket.IO to implement signalling for our video conferencing.
+Now we divert our attention away from WebRTC for a bit and work out Socket.IO. The reason is, later on we'll be using Node and Socket.IO to implement signalling for our video conferencing.
 
 Here we will spin up a Node application using Express. We will mix in Socket.IO and start serving a web page (index.html) which will open up a websocket. Each instance of the web page will be able to read a stream of text in a "chat" window.
 
