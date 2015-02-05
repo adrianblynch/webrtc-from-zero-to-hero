@@ -131,9 +131,9 @@ What you do with the data URL from here is up to you. I might revisit this at so
 
 ## Part 4 - Socket.IO
 
-Now we divert our attention away from WebRTC for a bit and work out Socket.IO. The reason is, later on we'll be using Node and Socket.IO to implement signalling for our video conferencing.
+Now we divert our attention away from WebRTC for a bit to demo Socket.IO. The reason being, later on we'll be using Node and Socket.IO to implement signalling for our video conferencing.
 
-Here we will spin up a Node application using Express. We will mix in Socket.IO and start serving a web page (index.html) which will open up a websocket. Each instance of the web page will be able to read a stream of text in a "chat" window.
+Here we spin up a Node application using Express. We mix in Socket.IO and start serving a web page which will open up a websocket.
 
 Looking in package.json you'll see a couple of dependancies. Express and Socket.IO:
 
@@ -146,7 +146,7 @@ Looking in package.json you'll see a couple of dependancies. Express and Socket.
 	...
 ```
 
-We define one route in Express which serves up our application's only page:
+We define one route in Express which serves up our application's only page, index.html:
 
 ```
 app.get('/', function(req, res) {
@@ -154,9 +154,9 @@ app.get('/', function(req, res) {
 });
 ```
 
-So if we only have one route which delivers index.html, how does the script tag load /socket.io/socket.io.js? Using Socket.IO the way we do, the HTTP server (or is it Express itself?) intercepts the request to /socket.io/socket.io.js and responses with the client side JS file.
+Note: Socket.IO also takes care of serving up the client code needed to make connections. Take a look [http://localhost/socket.io/socket.io.js](http://localhost/socket.io/socket.io.js).
 
-The part we're really interested in is this:
+The Socket.IO code follows:
 
 ```
 io.on('connection', function(socket) {
