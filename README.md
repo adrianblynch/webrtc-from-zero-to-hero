@@ -4,6 +4,7 @@
 - [Part 2 - Capture Video](#part-2---capture-video)
 - [Part 3 - Save Captured Image](#part-3---save-captured-image)
 - [Part 4 - Socket.IO](#part-4---socketio)
+- [Part 5 - Local Peer Connection](#part-5---local-peer-connection)
 - [Glossary](#glossary)
 
 Here I will chart my knowledge of WebRTC, from zero when I first heard about it, to where I am now which isn't that far, to hopefully a fully paid-up member of the WebRTC Expert Club!
@@ -195,6 +196,8 @@ socket
 });
 ```
 Note: The incoming messages on the server are emitted to everyone including the client that sent it. To emit to everyone but the sender, use `socket.broadcast.emit('Logout', msg);`.
+
+## Part 5 - Local Peer Connection
 
 ## Glossary
 
