@@ -7,7 +7,13 @@ app.get('/', function(req, res) {
 });
 
 io.on('connection', function(socket) {
-	console.log('a user connected');
+	socket
+	.on('Login', function(msg){
+		console.log('Login: ' + msg);
+	})
+	.on('Logout', function(msg){
+		console.log('Logout: ' + msg);
+	});
 });
 
 http.listen(8001, function() {

@@ -1,7 +1,31 @@
 <!doctype html>
 
+<p class="who">User ID: <span></span></p>
+<p class="status">Status: <span></span></p>
+
+<button class="login">Login</button>
+<button class="logout">Logout</button>
+
 <script src="/socket.io/socket.io.js"></script>
 <script>
+
+	var userId = Math.floor(Math.random() * 99) + 1; // Not important
 	var socket = io();
-	console.log(socket);
+	var loginButton = document.querySelector("button.login");
+	var logoutButton = document.querySelector("button.logout");
+	var loginStatus = document.querySelector("p.status span");
+	var who = document.querySelector("p.who span");
+
+	who.innerText = userId;
+
+	loginButton.addEventListener("click", function() {
+		loginStatus.innerText = "Logged in";
+		socket.emit("Login", userId);
+	}, false);
+
+	logoutButton.addEventListener("click", function() {
+		loginStatus.innerText = "Logged out";
+		socket.emit("Logout", userId);
+	}, false);
+
 </script>
