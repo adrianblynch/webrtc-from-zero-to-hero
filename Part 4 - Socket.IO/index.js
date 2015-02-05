@@ -10,9 +10,11 @@ io.on('connection', function(socket) {
 	socket
 	.on('Login', function(msg){
 		console.log('Login: ' + msg);
+		io.emit('Login', msg);
 	})
 	.on('Logout', function(msg){
 		console.log('Logout: ' + msg);
+		io.emit('Logout', msg);
 	});
 });
 
