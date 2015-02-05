@@ -1,17 +1,10 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
-
-- [WebRTC - From Zero to Hero](#webrtc---from-zero-to-hero)
-  - [Part 1 - The Video Element](#part-1---the-video-element)
-  - [Part 2 - Capture Video](#part-2---capture-video)
-  - [Part 3 - Save Captured Image](#part-3---save-captured-image)
-  - [Part 4 - Socket.IO](#part-4---socketio)
-  - [Glossary](#glossary)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
 # WebRTC - From Zero to Hero
+
+- [Part 1 - The Video Element](#part-1---the-video-element)
+- [Part 2 - Capture Video](#part-2---capture-video)
+- [Part 3 - Save Captured Image](#part-3---save-captured-image)
+- [Part 4 - Socket.IO](#part-4---socketio)
+- [Glossary](#glossary)
 
 Here I will chart my knowledge of WebRTC, from zero when I first heard about it, to where I am now which isn't that far, to hopefully a fully paid-up member of the WebRTC Expert Club!
 
