@@ -10,11 +10,13 @@ io.on('connection', function(socket) {
 	socket
 	.on('Login', function(msg){
 		console.log('Login: ' + msg);
-		io.emit('Login', msg);
+		//io.emit('Login', msg); // Send to everyone
+		socket.broadcast.emit('Login', msg); // Send to everyone but the originator
 	})
 	.on('Logout', function(msg){
 		console.log('Logout: ' + msg);
-		io.emit('Logout', msg);
+		//io.emit('Logout', msg);
+		socket.broadcast.emit('Logout', msg);
 	});
 });
 
