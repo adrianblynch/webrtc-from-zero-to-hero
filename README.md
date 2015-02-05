@@ -133,7 +133,7 @@ What you do with the data URL from here is up to you. I might revisit this at so
 
 Now we divert our attention away from WebRTC for a bit to demo Socket.IO. The reason being, later on we'll be using Node and Socket.IO to implement signalling for our video conferencing.
 
-Here we spin up a Node application using Express. We mix in Socket.IO and start serving a web page which will open up a websocket.
+Here we spin up a Node application using Express. We mix in Socket.IO and start serving a web page which will open up a websocket connection to the Node app.
 
 Looking in package.json you'll see a couple of dependancies. Express and Socket.IO:
 
@@ -154,7 +154,7 @@ app.get('/', function(req, res) {
 });
 ```
 
-Note: Socket.IO also takes care of serving up the client code needed to make connections. Take a look [http://localhost/socket.io/socket.io.js](http://localhost/socket.io/socket.io.js).
+Note: Socket.IO also takes care of serving up the client code needed to make connections. Take a look [http://localhost:8001/socket.io/socket.io.js](http://localhost:8001/socket.io/socket.io.js).
 
 The Socket.IO code follows:
 
@@ -163,17 +163,38 @@ io.on('connection', function(socket) {
 	socket
 	.on('Login', function(msg){
 		console.log('Login: ' + msg);
+		io.emit('Login', msg);
 	})
 	.on('Logout', function(msg){
 		console.log('Logout: ' + msg);
+		io.emit('Logout', msg);
 	});
 });
 ```
-We're listening for messages named(?) 'Login' and 'Logout'. When we receive them we log the message to the console.
+We're listening for messages named 'Login' and 'Logout'. When we receive them we log the message to the console and then `emit` those to all listeners.
 
-To view this in action, fire up the server with `node index.js` (or `nodemon`) and browse to [localhost:8001](http://localhost:8001/). Click login and notice the message in the console.
+To view this in action, fire up the server with `node index.js` (or `nodemon`) and browse to [localhost:8001](http://localhost:8001/). Click Login and notice the message in the console. Fire up another tab, window or different browser althogether and do the same, click Login. Watch the Node console to see the incoming messages.
 
-Fire up another tab, window or different browser and do the same. Notice the user ID changes?
+Outgoing messages are send with the following:
+
+```
+	io.emit('Login', msg);
+	...
+	io.emit('Logout', msg);
+```
+
+They are received on the client with:
+
+```
+socket
+.on("Login", function(msg) {
+	logins.value = msg + " just logged in";
+})
+.on("Logout", function(msg) {
+	logins.value = msg + " just logged out";
+});
+```
+Note: The incoming messages on the server are emitted to everyone including the client that sent it. To emit to everyone but the sender, use `socket.broadcast.emit('Logout', msg);`.
 
 ## Glossary
 
