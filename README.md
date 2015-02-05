@@ -156,6 +156,25 @@ app.get('/', function(req, res) {
 
 So if we only have one route which delivers index.html, how does the script tag load /socket.io/socket.io.js? Using Socket.IO the way we do, the HTTP server (or is it Express itself?) intercepts the request to /socket.io/socket.io.js and responses with the client side JS file.
 
+The part we're really interested in is this:
+
+```
+io.on('connection', function(socket) {
+	socket
+	.on('Login', function(msg){
+		console.log('Login: ' + msg);
+	})
+	.on('Logout', function(msg){
+		console.log('Logout: ' + msg);
+	});
+});
+```
+We're listening for messages named(?) 'Login' and 'Logout'. When we receive them we log the message to the console.
+
+To view this in action, fire up the server with `node index.js` (or `nodemon`) and browse to [localhost:8001](http://localhost:8001/). Click login and notice the message in the console.
+
+Fire up another tab, window or different browser and do the same. Notice the user ID changes?
+
 ## Glossary
 
 Here's a great [WebRTC glossary](https://webrtcglossary.com/). The below is my own wording for terms as I encounter them and will include things outside of WebRTC.
