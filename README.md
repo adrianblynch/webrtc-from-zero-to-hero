@@ -212,3 +212,7 @@ Here's a great [WebRTC glossary](https://webrtcglossary.com/). The below is my o
 ## Useful links
 
 - http://www.anyfirewall.com/
+
+## Articles
+
+- [WebRTC: Are We There Yet?](http://www.nojitter.com/post/240169875/webrtc-are-we-there-yet) - Is WebRTC ready for prime-time? In short, yes.
