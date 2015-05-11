@@ -207,7 +207,7 @@ Here's a great [WebRTC glossary](https://webrtcglossary.com/). The below is my o
 - STUN - [Session Traversal Utilities for NAT](http://tools.ietf.org/html/rfc5389) - Formerly [Simple Traversal of User Datagram Protocol Through NAT](http://tools.ietf.org/html/rfc3489) - Used to allow traffic between peers behind firewalls.
 - TURN - [Traversal Using Relay NAT](http://tools.ietf.org/html/rfc5766)
 - SDP  - [Session Description Protocol](http://tools.ietf.org/html/rfc4566)
-- Signalling - [HTML Rocks take on signalling](http://www.html5rocks.com/en/tutorials/webrtc/infrastructure/#what-is-signaling) - Coordinated communications between two or more parties.
+- Signalling - [HTML5 Rocks on signalling](http://www.html5rocks.com/en/tutorials/webrtc/infrastructure/#what-is-signaling) - Coordinated communications between two or more parties.
 
 ## Useful links
 
