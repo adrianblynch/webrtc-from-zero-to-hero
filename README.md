@@ -1,5 +1,9 @@
 # WebRTC - From Zero to Hero
 
+```
+Things seem to have changed a little in the last 4 years. Some of the examples below no longer work.
+```
+
 - [Part 1 - The Video Element](#part-1---the-video-element)
 - [Part 2 - Capture Video](#part-2---capture-video)
 - [Part 3 - Save Captured Image](#part-3---save-captured-image)
@@ -199,6 +203,8 @@ socket
 Note: The incoming messages on the server are emitted to everyone including the client that sent it. To emit to everyone but the sender, use `socket.broadcast.emit('Logout', msg);`.
 
 ## Part 5 - Local Peer Connection
+
+Still to come...
 
 ## Glossary
 
